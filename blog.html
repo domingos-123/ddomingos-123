@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domingos Mangange | Portfólio Profissional</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --verde-neon: #00ff88;
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --border-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar custom */
+        .navbar {
+            background-color: #111 !important;
+            border-bottom: 2px solid var(--verde-neon);
+            transition: 0.3s;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--verde-neon) !important;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-brand span {
+            color: #fff;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            transition: 0.3s;
+            margin: 0 5px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--verde-neon) !important;
+        }
+
+        .navbar-toggler {
+            border-color: var(--verde-neon) !important;
+            color: var(--verde-neon) !important;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 255, 136, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding-top: 80px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-text h3 {
+            color: var(--verde-neon);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        .hero-text h1 span {
+            color: var(--verde-neon);
+        }
+
+        .hero-text h2 {
+            font-size: 1.8rem;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            color: #ccc;
+            font-size: 1.1rem;
+            max-width: 500px;
+        }
+
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--verde-neon);
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.3);
+        }
+
+        /* Seções */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-title span {
+            color: var(--verde-neon);
+        }
+
+        /* Cards */
+        .card-custom {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-10px);
+            border-color: var(--verde-neon);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+        }
+
+        .card-custom .icon {
+            font-size: 3rem;
+            color: var(--verde-neon);
+            margin-bottom: 15px;
+        }
+
+        .card-custom h3 {
+            color: var(--verde-neon);
+            margin-bottom: 10px;
+        }
+
+        .card-custom p {
+            color: #ccc;
+        }
+
+        /* Info items */
+        .info-item {
+            background-color: var(--bg-card);
+            border-left: 4px solid var(--verde-neon);
+            padding: 20px;
+            border-radius: 10px;
+            height: 100%;
+        }
+
+        .info-item h4 {
+            color: var(--verde-neon);
+        }
+
+        /* Projetos */
+        .project-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--verde-neon);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+        }
+
+        .project-image {
+            height: 200px;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .project-body {
+            padding: 25px;
+        }
+
+        .project-body h3 {
+            color: var(--verde-neon);
+        }
+
+        .badge-custom {
+            background-color: rgba(0, 255, 136, 0.2);
+            color: var(--verde-neon);
+            border: 1px solid var(--verde-neon);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 3px;
+        }
+
+        /* Formulário */
+        .form-control {
+            background-color: var(--bg-card) !important;
+            border: 1px solid var(--border-color) !important;
+            color: #fff !important;
+            border-radius: 10px !important;
+            padding: 12px 15px !important;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--verde-neon) !important;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.2) !important;
+            background-color: #222 !important;
+        }
+
+        .form-control::placeholder {
+            color: #888 !important;
+        }
+
+        /* Botões */
+        .btn-neon {
+            background-color: var(--verde-neon);
+            color: #000;
+            font-weight: bold;
+            border: 2px solid var(--verde-neon);
+            border-radius: 50px;
+            padding: 12px 35px;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-neon:hover {
+            background-color: transparent;
+            color: var(--verde-neon);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+        }
+        .btn-outline-neon {
+            background-color: transparent;
+            color: var(--verde-neon);
+            font-weight: bold;
+            border: 2px solid var(--verde-neon);
+            border-radius: 50px;
+            padding: 12px 35px;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline-neon:hover {
+            background-color: var(--verde-neon);
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            border-top: 1px solid #1a1a1a;
+            padding: 30px 0;
+            text-align: center;
+            color: #888;
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .animate-delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .animate-delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .animate-delay-3 { animation-delay: 0.6s; opacity: 0; }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .hero-image img {
+                width: 250px;
+                height: 250px;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" tabindex="0">
+
+    <!-- Navbar Bootstrap -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="https://www.facebook.com/profile.php?id=61580665605941">&lt;Domingos<span>.</span>Mangange/&gt;</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 hero-text animate-fadeInUp">
+                    <h3>👋 Olá, eu sou</h3>
+                    <h1>Domingos <span>Mangange</span></h1>
+                    <h2>Milton Domingos Mt   921-91-29-70</h2>
+                    <p class="mb-4">
+                        Desenvolvedor Web & Estudante de Informática e Gestão no <strong>IPCN</strong>.
+                        Apaixonado por criar soluções digitais elegantes e funcionais.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#projetos" class="btn-neon">Ver Projetos</a>
+                        <a href="#contato" class="btn-outline-neon">Falar Comigo</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center mt-4 mt-lg-0 animate-fadeInUp animate-delay-1">
+                    <div class="hero-image d-inline-block">
+                        <img src="milton tavares.png" class="img-fluid" alt="Domingos Mangange" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre https://i.pravatar.cc/350?img=68 -->
+    <section id="sobre" style="background-color: #111;">
+        <div class="container">
+            <h2 class="section-title">Sobre <span>Mim</span></h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <p class="lead text-center mb-5" style="color: #ccc;">
+                        Sou o <strong>Domingos António João Mangange</strong>,estudante do quarto ano de
+                        <strong>Informática e Gestão</strong> (Instituto  Politécnico Cladanto e Neto).
+                        Tenho uma enorme paixão pelo desenvolvimento web e tecnologia em geral.
+                    </p>
+                    <p class="text-center mb-5" style="color: #ccc;">
+                        Trabalho como <strong>desenvolvedor web</strong>, criando sites modernos, responsivos e
+                        funcionais. Além do desenvolvimento web, também exploro outras áreas da tecnologia como
+                        design de interfaces, bases de dados e muito mais.
+                    </p>
+
+                    <!-- Grid Bootstrap -->
+                    <div class="row g-4 mt-4">
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="info-item">
+                                <h4>🎓 Formação</h4>
+                                <p class="mb-0" style="color: #ccc;"> Informática - Gestão(4º Ano)</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="info-item">
+                                <h4>💼 Experiência</h4>
+                                <p class="mb-0" style="color: #ccc;">Desenvolvedor Web Freelancer</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="info-item">
+                                <h4>📍 Localização</h4>
+                                <p class="mb-0" style="color: #ccc;">Angola</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="info-item">
+                                <h4>🌐 Idiomas</h4>
+                                <p class="mb-0" style="color: #ccc;">Português, Inglês</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades">
+        <div class="container">
+            <h2 class="section-title">Minhas <span>Habilidades</span></h2>
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card-custom text-center">
+                        <i class="bi bi-filetype-html icon"></i>
+                        <h3>HTML5</h3>
+                        <p class="mb-0 small">Estruturação semântica</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card-custom text-center">
+                        <i class="bi bi-filetype-css icon"></i>
+                        <h3>CSS3</h3>
+                        <p class="mb-0 small">Design responsivo</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card-custom text-center">
+                        <i class="bi bi-filetype-js icon"></i>
+                        <h3>JavaScript</h3>
+                        <p class="mb-0 small">Interatividade dinâmica</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card-custom text-center">
+                        <i class="bi bi-bootstrap-fill icon"></i>
+                        <h3>Bootstrap</h3>
+                        <p class="mb-0 small">Framework CSS</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card-custom text-center">
+                        <i class="bi bi-database-fill icon"></i>
+                        <h3>MySQL</h3>
+                        <p class="mb-0 small">Bases de dados</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card-custom text-center">
+                        <i class="bi bi-git icon"></i>
+                        <h3>Git</h3>
+                        <p class="mb-0 small">Versionamento</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" style="background-color: #111;">
+        <div class="container">
+            <h2 class="section-title">Meus <span>Projetos</span></h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <div class="project-image">🛒</div>
+                        <div class="project-body">
+                            <h3>E-Commerce Store</h3>
+                            <p style="color: #ccc;">Loja virtual completa com carrinho de compras e pagamento integrado.</p>
+                            <div>
+                                <span class="badge-custom">React</span>
+                                <span class="badge-custom">Node.js</span>
+                                <span class="badge-custom">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <div class="project-image">📊</div>
+                        <div class="project-body">
+                            <h3>Dashboard Admin</h3>
+                            <p style="color: #ccc;">Painel administrativo com gráficos e gestão de utilizadores.</p>
+                            <div>
+                                <span class="badge-custom">HTML/CSS</span>
+                                <span class="badge-custom">JavaScript</span>
+                                <span class="badge-custom">Chart.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <div class="project-image">📱</div>
+                        <div class="project-body">
+                            <h3>App de Tarefas</h3>
+                            <p style="color: #ccc;">Aplicação web para gestão de tarefas diárias com notificações.</p>
+                            <div>
+                                <span class="badge-custom">Vue.js</span>
+                                <span class="badge-custom">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title">Entrar em <span>Contato</span></h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <form id="contactForm" novalidate>
+                        <div class="mb-3">
+                            <input type="text" class="form-control form-control-lg" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control form-control-lg" placeholder="Seu melhor email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control form-control-lg" placeholder="Assunto">
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="form-control form-control-lg" rows="5" placeholder="Sua mensagem..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-neon w-100 text-center"><a href="http://wa.me/+244921912970?text=olá Milton, gostei do seu site" target="_blank">Enviar Mensagem ✉️</a></button>
+                    </form>
+                    <div class="d-flex justify-content-center gap-4 mt-5">
+                        <a href="#" class="fs-2 text-white text-decoration-none" title="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="#" class="fs-2 text-white text-decoration-none" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-2 text-white text-decoration-none" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-2 text-white text-decoration-none" title="Email"><i class="bi bi-envelope-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-1">&copy; 2026 Domingos Mangange. Todos os direitos reservados.</p>
+            <p class="mb-0 small">Estudante de  Informática - Geestão</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle (com Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script>
+        // Ativar scroll spy com Bootstrap
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Smooth scroll para links internos (compatível com Bootstrap)
+            document.querySelectorAll('a.nav-link, a.btn-neon, a.btn-outline-neon').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const offset = 80; // altura da navbar
+                            const position = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                            window.scrollTo({
+                                top: position,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Fechar menu mobile se estiver aberto
+                            const navbarCollapse = document.getElementById('navbarNav');
+                            if (navbarCollapse.classList.contains('show')) {
+                                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                                if (bsCollapse) bsCollapse.hide();
+                            }
+                        }
+                    }
+                });
+            });
+
+            // Envio do formulário
+            const form = document.getElementById('contactForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (form.checkValidity()) {
+                        alert('✅ Obrigado pela mensagem, Domingos! Entrarei em contacto brevemente.');
+                        form.reset();
+                    } else {
+                        form.classList.add('was-validated');
+                    }
+                });
+            }
+
+            // Adicionar animação aos cards quando visíveis
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.card-custom, .project-card, .info-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
